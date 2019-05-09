@@ -31,7 +31,7 @@ class ExchangeRecord extends AdminBase
 
     public function list(Request $request)
     {
-        dd($request->session());die;
+        //dd($request->session());die;
         $query = $request->get();
         $res = ExchangeRecordModel::getListByCond($query);
         $res= $res->visible(['id','goods_barcode','mobile','duihuan_time','rcode','is_huan','staff_sn','gifts'=>['goods_name','original_img'],'staff'=>['name'] ])->toArray();
